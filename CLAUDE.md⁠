@@ -1,0 +1,18 @@
+# lama mala - Buffet Ordering System
+
+## Project Context & Rules
+- **Stack:** Next.js (App Router), React 19, JavaScript (JSX, No TypeScript), Supabase.
+- **Styling:** CSS-in-JS หรือ Inline Styles / CSS Modules
+- **Deployment:** Vercel
+
+## ⚠️ Important Framework Rules (Next.js 15+)
+- Dynamic Route parameters (`params` และ `searchParams`) เป็น **Promise**
+- **Client Components (`'use client'`):** ต้อง unwrap `params` ด้วย React Hook `use()` เสมอ
+  ```javascript
+  'use client'
+  import { use } from 'react'
+
+  export default function OrderPage({ params }) {
+    const { tableId } = use(params)
+    // ...
+  }
